@@ -17,10 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: rails_website_template_development
+  database: velvet_design_development
   pool: 5
-  username: rails_website_template_user
-  password: 1234
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -46,10 +45,9 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: rails_website_template_test
+  database: velvet_design_test
   pool: 5
-  username: rails_website_template_user
-  password: 1234
+
 
 production:
   adapter: postgresql
