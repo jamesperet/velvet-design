@@ -93,7 +93,7 @@ RailsWebsiteTemplate::Application.configure do
         :enable_starttls_auto => true, # detects and uses STARTTLS
         :user_name => ENV["MANDRILL_USERNAME"],
         :password  => ENV["MANDRILL_KEY"], # SMTP password is any valid API key
-        :authentication => 'login', # Mandrill supports 'plain' or 'login'
+        :authentication => 'plain', # Mandrill supports 'plain' or 'login'
         :domain => ENV["DOMAIN_NAME"] # your domain to identify your server when connecting
   }
   
