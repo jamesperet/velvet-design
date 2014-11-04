@@ -1,8 +1,19 @@
-<div class="row">
-	<div class="span12">
-		<div class="hero-unit">
-		  <h1><%= @config.maintenance_title %></h1>
-		  <p><%= @config.maintenance_message %></p>
+<div class="container-fluid">
+     <div class="row-fluid">
+          <div class="span8">	
+		   <div class="hover_trick"></div>   
+		   <% link_to (image_tag "letras.jpg", style: 'margin-top: 20px;'), '#', class: 'hover_trick' %>
 		</div>
-	</div>
+		<div class="span4">
+			<h2 style="text-transform: uppercase; color: white; position: relative; top: 50%; transform: translateY(300%); text-align: center;">
+				<span><%= @config.maintenance_title %></span>
+				<%= image_tag "logo_velvet.png", size: '120x120', style: 'margin-top: -10px;' %>
+			</h2>
+			
+	  	</div>
 </div>
+
+<footer style="margin-top: 100px;">
+  <hr>
+  <p style="text-align: center; color: white;">&copy; <%= @config.website_name %> <%= Time.now.year %> | <%= link_to 'Login', new_user_session_path %> | <%= mail_to @config.contact_email, (t 'contact.contact') %></p>
+</footer>
