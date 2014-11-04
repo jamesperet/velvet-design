@@ -4,6 +4,7 @@ class StartController < ApplicationController
   
   def index
     @blog_posts = BlogPost.order('created_at DESC').take(4)
+    @last_post = BlogPost.last
   end
 
 end

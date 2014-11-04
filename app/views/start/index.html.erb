@@ -10,10 +10,18 @@
 	 <div class="carousel-inner" role="listbox">
 	   <div class="item active">
 	     <%= image_tag "header.jpg", style: 'width: 100%;' %>
-	     <div class="container">
-	       <div class="carousel-caption">
-	         <h1><%= @config.website_name %></h1>
-	         <p><%= @config.tagline %></p>
+	     <div class="container" >
+		  <div class="row">
+			  <div class="span12" style="height: 20px;">
+			       <div class="" style="background-color: transparent; position: relative; top: -500px;">
+			  
+			         <h1 class="header">Design Conectivo</h1>
+			         <p class="lead header lead-big">
+					    <%= @config.tagline %>
+			    
+				    </p>
+			    </div>
+		    </div>
 	      </div>
           </div>
 	  </div>
@@ -21,53 +29,79 @@
 
 <div class="container" style="margin-top: 30px;">
 	<div class="row">
+		
 		<div class="span12">
-
 			<div class="page-header">
-			  <h1><%= t 'blog.latest_posts'%> <%= link_to (t 'blog.more_posts'), blog_path, class: 'btn btn-large pull-right' %></h1>
-			</div>
-
-			<ul class="thumbnails">
-			    <% @blog_posts.each do |post| %>
-				   <li class="span3">
-				     <div class="thumbnail" style="height: 300px;">
-					  <% if post.image.file != nil %>
-					  	<%= image_tag post.image.thumb.to_s %>
-					  <% else %>
-				       	<img src="http://placehold.it/300x200" alt="">
-					  <% end %>
-				       <h3><%= link_to post.title, post_path(post) %></h3>
-				       <p><%= post.description %></p>
-				     </div>
-				   </li>
-			    <% end %>
-			</ul>
-	
-			<div class="page-header">
-			  <h1>Sobre</h1>
+			  <h2 class="header">Sobre nós</h2>
 			</div>
 			
-			<p>Em tempos de conexões, como o nosso, em que as informações chegam à velocidade da luz aos quatro cantos do mundo e que as trocas se intensificam,  irradiando em múltiplos focos, a comunicação deixa de ser matéria exclusiva de um ou dois campos do conhecimento para se tornar plataforma colaborativa entre diversas linguagens.</p> 
+			<p class="lead lead-big">Em tempos de conexões, como o nosso, em que as informações chegam à velocidade da luz aos quatro cantos do mundo e que as trocas se intensificam,  irradiando em múltiplos focos, a comunicação deixa de ser matéria exclusiva de um ou dois campos do conhecimento para se tornar plataforma colaborativa entre diversas linguagens.</p> 
 
-			<p>E, na medida em que a esfera digital se configura como um hub, por onde passam todas as formas de criação, ela coloca novos desafios para a criação, tanto no plano bidimensional quanto no tridimensional - que tende a se tornar cada vez mais experiêncial.</p>
+			<p class="lead">E, na medida em que a esfera digital se configura como um hub, por onde passam todas as formas de criação, ela coloca novos desafios para a criação, tanto no plano bidimensional quanto no tridimensional - que tende a se tornar cada vez mais experiêncial.</p>
 
-			<p>A Velvet Design nasce de um profundo afinamento com as dinâmicas da comunicação de nossa época  e, ao mesmo tempo,  da convergência entre duas trajetórias no campo da criação.</p>
+			<p class="lead ">A <b>Velvet Design</b> nasce de um profundo afinamento com as dinâmicas da comunicação de nossa época  e, ao mesmo tempo,  da convergência entre duas trajetórias no campo da criação.</p>
 
-			<p>Por um lado, da experiência de anos de trabalho com cenografia e design gráfico, de Roberta Queiroz. Por outro, do percurso consolidado na pintura, nacional e internacionalmente, do artista plástico André Poli. Dessa parceria entre linguagens e da afinidade com o propósito de uma atuação multidisciplinar, surge a Velvet em 2006, com a meta de desenvolver projetos, em diferentes escalas e suportes, que respondam às necessidades específicas de cada cliente.</p>
+			<p class="lead">Por um lado, da experiência de anos de trabalho com cenografia e design gráfico, de <b>Roberta Queiroz</b>. Por outro, do percurso consolidado na pintura, nacional e internacionalmente, do artista plástico <b>André Poli</b>. Dessa parceria entre linguagens e da afinidade com o propósito de uma atuação multidisciplinar, surge a Velvet em 2006, com a meta de desenvolver projetos, em diferentes escalas e suportes, que respondam às necessidades específicas de cada cliente.</p>
 
-			<p>Compreendendo o design de uma maneira ampla, a Velvet Design se posiciona como uma agência de criação, comunicação e realização de ideias.</p>
+		</div>
+		
+	</div>
+</div>
+<div style="margin-top: 50px;"></div>
 
-			<p>Para nós o design é um princípio que pode se desdobrar em diversas formas e escalas  - da esfera gráfica à ambiental passando pelo objeto - além de contemplar, também, o desenho do processo que envolve desde a concepção até a realização dos projetos formulados.</p>
+	<div id="design" class="thumb"><div class="thumb-text">Design</div></div>
+	<div id="agencia" class="thumb"><div class="thumb-text">Agência</div></div>
+	<div id="editora" class="thumb"><div class="thumb-text">Editora</div></div>	
 
-			<p>Nessa direção, a Velvet Design Conectivo assegura aos seus clientes a execução integral dos projetos que desenvolve – operacionalizando todas as etapas de produção - otimizando recursos e garantindo que o produto final seja concluído do modo como fora inicialmente imaginado.</p>
 
-			<div class="page-header">
-			  <h1>Contato</h1>
-			</div>
+
 	
-	
+<div id="about2" class="container">
+	<div class="row" style="margin-top: 80px;">
+		<div class="span12">
+			
+			<p class="lead lead-big">Compreendendo o design de uma maneira ampla, a Velvet Design se posiciona como uma agência de criação, comunicação e realização de ideias.</p>
 
-			<br>
+			<p class="lead">Para nós o design é um princípio que pode se desdobrar em diversas formas e escalas  - da esfera gráfica à ambiental passando pelo objeto - além de contemplar, também, o desenho do processo que envolve desde a concepção até a realização dos projetos formulados.</p>
+
+			<p class="lead">Nessa direção, a Velvet Design Conectivo assegura aos seus clientes a execução integral dos projetos que desenvolve – operacionalizando todas as etapas de produção - otimizando recursos e garantindo que o produto final seja concluído do modo como fora inicialmente imaginado.</p>
+		</div>
+			
+	</div>
+</div>
+
+<div id="post" style="margin-top: 80px; " class="">
+	<div  id="post-image" class="pull-left" style="width: 50%; height: 1000px; overflow: hide;">
+		<%= image_tag "post_maison.jpg", style: 'width: 100%; max-height: 1000px;'%>
+	</div>
+	<div class="pull-right" style="width: 50%; background-color: #F7F7F7;">
+		<div style="padding: 50px; padding-top: 20px; width: 70%">
+			<h4 class="header">Notícias</h4>
+			<h2 class="header" style="margin-bottom: 50px;"><%= @last_post.title.html_safe %></h2>
+			<div class="feature-post-text"><%= @last_post.content.html_safe %></div>
 		</div>
 	</div>
 </div>
+
+<div id="about2" class="container">
+	<div class="row" style="margin-top: 80px;">
+		<div class="span12">
+			
+			<p class="lead lead-big">Compreendendo o design de uma maneira ampla, a Velvet Design se posiciona como uma agência de criação, comunicação e realização de ideias.</p>
+
+			<p class="lead">Para nós o design é um princípio que pode se desdobrar em diversas formas e escalas  - da esfera gráfica à ambiental passando pelo objeto - além de contemplar, também, o desenho do processo que envolve desde a concepção até a realização dos projetos formulados.</p>
+
+			<p class="lead">Nessa direção, a Velvet Design Conectivo assegura aos seus clientes a execução integral dos projetos que desenvolve – operacionalizando todas as etapas de produção - otimizando recursos e garantindo que o produto final seja concluído do modo como fora inicialmente imaginado.</p>
+		</div>
+			
+	</div>
+</div>
+
+<div class="container" style="backgroun-color: white;">
+	<footer style="margin-top: 100px; height: 80px;">
+	  <hr>
+	  <p style="text-align: center;">&copy; <%= @config.website_name %> <%= Time.now.year %></p>
+	</footer>
+</div>
+
+

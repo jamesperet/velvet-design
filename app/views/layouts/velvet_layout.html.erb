@@ -46,14 +46,27 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">RailsWebsiteTemplate</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <%= image_tag "logotipo_velvet.png", class: 'brand', style: 'width: 250px;' %>
+          
+		<div class="container nav-collapse ">
+		  <ul class="nav pull-right">
+		    <li><%= link_to "Blog", blog_path  %></li>
+		    <li ><%= link_to (t 'contact.contact'), contact_messages_path  %></li>
+			<% if current_user.admin %>
+				<li><%= link_to ('<i class="fa fa-cogs"></i>').html_safe, admin_dashboard_path %></li>
+			<% end %>
+			<% if user_signed_in? %>
+	 			<li><%= link_to ('<i class="fa fa-user"></i>').html_safe, edit_user_registration_path %></li>
+	 			<li><%= link_to ('<i class="fa fa-sign-out"></i>').html_safe, destroy_user_session_path, method: :delete %></li>
+			<% else %>
+				<li><%= link_to ('<i class="fa fa-sign-in"></i>').html_safe, new_user_session_path  %></li>
+				<li><%= link_to (t "nav.signup"), new_user_registration_path  %></li>
+			<% end %>
+			
+		</ul>
+  
+		</div><!--/.nav-collapse -->
+		
         </div>
       </div>
     </div>
