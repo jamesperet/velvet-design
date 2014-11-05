@@ -2,7 +2,7 @@
 function attachHandler(jQuery) {
 	var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
 	var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
-	var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 500);
+	var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
 
 	// on scroll, 
 	$(window).on('scroll',function(){
@@ -69,6 +69,16 @@ function attachHandler(jQuery) {
 	    }, 1000);
 	});
 	
+	window.setInterval(function(){
+		var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
+		var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
+		var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
+	}, 5000);
+	$( window ).resize(function(){
+		var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
+		var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
+		var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
+	});
 };
 
 $(document).ready(attachHandler);
