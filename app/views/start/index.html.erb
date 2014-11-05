@@ -1,12 +1,6 @@
 <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 400px">
- <!-- Indicators -->
-	 <ol class="carousel-indicators">
-	   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-	   <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-	   <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-	 </ol>
 	 <div class="carousel-inner" role="listbox">
 	   <div class="item active">
 	     <%= image_tag "header.jpg", style: 'width: 100%;' %>
@@ -27,7 +21,7 @@
 	  </div>
 </div><!-- /.carousel -->
 
-<div class="container" style="margin-top: 30px;">
+<div id="sobre" class="container" style="margin-top: 30px;">
 	<div class="row">
 		
 		<div class="span12">
@@ -82,25 +76,39 @@
 		</div>
 	</div>
 </div>
-
-<div id="about2" class="container">
-	<div class="row" style="margin-top: 80px;">
-		<div class="span12">
-			
-			<p class="lead lead-big">Compreendendo o design de uma maneira ampla, a Velvet Design se posiciona como uma agência de criação, comunicação e realização de ideias.</p>
-
-			<p class="lead">Para nós o design é um princípio que pode se desdobrar em diversas formas e escalas  - da esfera gráfica à ambiental passando pelo objeto - além de contemplar, também, o desenho do processo que envolve desde a concepção até a realização dos projetos formulados.</p>
-
-			<p class="lead">Nessa direção, a Velvet Design Conectivo assegura aos seus clientes a execução integral dos projetos que desenvolve – operacionalizando todas as etapas de produção - otimizando recursos e garantindo que o produto final seja concluído do modo como fora inicialmente imaginado.</p>
-		</div>
-			
-	</div>
-</div>
-
-<div class="container" style="backgroun-color: white;">
-	<footer style="margin-top: 100px; height: 80px;">
+<div class="clearfix"></div>
+<div >
+	<footer class="velvet">
 	  <hr>
-	  <p style="text-align: center;">&copy; <%= @config.website_name %> <%= Time.now.year %></p>
+	  
+	<div class="container nav-collapse">
+
+		
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<p class="footer">
+		    		 	<a id="btn-sobre" href="#sobre">Sobre</a> | 
+		   		  	<a id="btn-post" href="#post">Notícias</a> | 
+			   		<% if user_signed_in? %>
+						<% if current_user.admin %>
+			   				<%= link_to 'Painel de Controle', admin_dashboard_path %> | 
+						<% end %>	
+			   		<% end %>
+			   		<% if user_signed_in? %>
+			    			<%= link_to 'Conta', edit_user_registration_path %> |
+			    			<%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+			   		<% else %>
+			   			<%= link_to 'Entra', new_user_session_path  %> | 
+			   			<%= link_to (t "nav.signup"), new_user_registration_path  %>
+			   		<% end %>
+				</p>
+				<hr style="margin-top: 20px;">
+				<p style="text-align: center; color: white">&copy; <%= @config.website_name %> <%= Time.now.year %></p>
+			  </div>
+		  </div>
+	  </div>
 	</footer>
 </div>
 

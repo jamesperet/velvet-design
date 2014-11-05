@@ -45,5 +45,29 @@ $( document ).ready(function() {
 
 	});
 	
-
+	// scroll to 'header'
+	$("#btn-logo").click(function() {
+	    event.preventDefault();
+	    $('html, body').animate({
+	        scrollTop: $("#myCarousel").offset().top
+	    }, 1000);
+	});
+	
+	// scroll to 'sobre'
+	$("#btn-sobre").click(function() {
+	    event.preventDefault();
+	    $('html, body').animate({
+	        scrollTop: ($("#sobre").offset().top - 150)
+	    }, 1000);
+	});
+	
+	// scroll to 'post'
+	$("#btn-post").click(function() {
+	    event.preventDefault();
+	    $('html, body').animate({
+	        scrollTop: ($("#post").offset().top - 50)
+	    }, 1000);
+	});
+	
 });
+
