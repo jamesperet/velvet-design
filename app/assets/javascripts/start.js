@@ -1,8 +1,8 @@
 // get the value of the bottom of the #main element by adding the offset of that element plus its height, set it as a variable
-$( document ).ready(function() {
+function attachHandler(jQuery) {
 	var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
 	var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
-	var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
+	var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 500);
 
 	// on scroll, 
 	$(window).on('scroll',function(){
@@ -69,5 +69,7 @@ $( document ).ready(function() {
 	    }, 1000);
 	});
 	
-});
+};
 
+$(document).ready(attachHandler);
+$(document).load(attachHandler);
