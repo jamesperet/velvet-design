@@ -1,14 +1,16 @@
 // get the value of the bottom of the #main element by adding the offset of that element plus its height, set it as a variable
 function attachHandler(jQuery) {
+	
+	$('#post-image').css('height', (window.height- 102));	
 	var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
-	var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
-	var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
-
+	var about_bottom = $('#post').offset().top +  $('#post-image').height() - 102;
+	var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() -102;
+	
 	// on scroll, 
 	$(window).on('scroll',function(){
 
 	    // we round here to reduce a little workload
-	    stop = Math.round($(window).scrollTop());
+	    stop = Math.round($(document).scrollTop());
 	    if (stop > mainbottom) {
 	        $('.navbar-inner').addClass('past-main');
 	    } else {
@@ -21,7 +23,7 @@ function attachHandler(jQuery) {
 	$(window).on('scroll',function(){
 
 	    // we round here to reduce a little workload
-	    stop = Math.round($(window).scrollTop());
+	    stop = Math.round($(document).scrollTop());
 	    if (stop > about_bottom) {
 	        $('#post-image').addClass('affix top-affix ');
 	    } else {
@@ -34,13 +36,14 @@ function attachHandler(jQuery) {
 	$(window).on('scroll',function(){
 
 	    // we round here to reduce a little workload
-	    stop = Math.round($(window).scrollTop());
+	    stop = Math.round($(document).scrollTop());
 	    if (stop > post_bottom && stop > about_bottom) {
 	        $('#post-image').removeClass('affix top-affix ');
-		   var textsize = $('.feature-post-text').height() - $('#post-image').height()/2 - 80
+		   var textsize = $('.feature-post-text').height() - $('#post-image').height()/2 - 80;
 		   $('#post-image').css('margin-top', textsize);
 	    } else {
 	    		$('#post-image').css('margin-top', '0');
+			$('#post-image').css('top', (($(document).scrollTop() - about_bottom - 102)) * -0.1);
 	    }
 
 	});
@@ -69,15 +72,11 @@ function attachHandler(jQuery) {
 	    }, 1000);
 	});
 	
-	window.setInterval(function(){
-		var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
-		var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
-		var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
-	}, 5000);
 	$( window ).resize(function(){
+		$('#post-image').css('height', (window.height- 102));	
 		var mainbottom = $('#myCarousel').offset().top + ($('#myCarousel').height()*2)-10;
-		var about_bottom = $('#post').offset().top +  $('#post-image').height() - (screen.height - $('#post-image').height() + 152);
-		var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() - (screen.height - $('.feature-post-text').height() + 232);
+		var about_bottom = $('#post').offset().top +  $('#post-image').height() - 102;
+		var post_bottom = $('.feature-post-text').offset().top +  $('.feature-post-text').height() -102;
 	});
 };
 
